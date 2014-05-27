@@ -1,4 +1,4 @@
-package gopacket_local_test
+package gopacket_local
 
 import (
   _ "code.google.com/p/gopacket"
