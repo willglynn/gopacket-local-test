@@ -66,10 +66,14 @@ func TestCapture(t *testing.T) {
   }
   // XXX: this causes a hang and/or segfault
   //defer handle.Close()
+	
+	t.Logf("link type before setting filter: %d", handle.LinkType())
 
   if err := handle.SetBPFFilter("host 8.8.8.8 && port 9"); err != nil {
     t.Fatal(err)
   }
+
+	t.Logf("link type after setting filter: %d", handle.LinkType())
 
   t.Logf("capturing on %q", iface)
 
